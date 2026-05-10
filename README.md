@@ -26,6 +26,19 @@ codes/mynn/models.py          Model_MLP and Model_CNN
 codes/mynn/optimizer.py       SGD and Momentum SGD
 codes/mynn/lr_scheduler.py    StepLR, MultiStepLR, ExponentialLR
 codes/run_experiments.py      Training, evaluation, and visualization script
+codes/test_model.py           Evaluate a saved model on the MNIST test set
+```
+
+## Dataset
+
+The MNIST files are not included in this repository. Place the provided files under:
+
+```text
+codes/dataset/MNIST/
+  train-images-idx3-ubyte.gz
+  train-labels-idx1-ubyte.gz
+  t10k-images-idx3-ubyte.gz
+  t10k-labels-idx1-ubyte.gz
 ```
 
 ## Run Experiments
@@ -46,6 +59,14 @@ Quick smoke test:
 ```bash
 cd codes
 PYTHONPATH=. python run_experiments.py --smoke --output-dir ../outputs_smoke
+```
+
+Evaluate a saved model:
+
+```bash
+PYTHONPATH=codes python codes/test_model.py \
+  --model-type cnn \
+  --model-path outputs_final/cnn_momentum/best_model.pickle
 ```
 
 ## Current Results
