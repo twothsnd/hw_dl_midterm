@@ -1,0 +1,11 @@
+codes/dataset/
+outputs*/
+artifacts/
+reports/
+*.pickle
+*.pkl
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+project_1.pdf
